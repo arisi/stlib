@@ -1,0 +1,25 @@
+Hakemisto startup
+
+Prosessorin perusjutut
+Koottu eri hakemistoista ST:n standard peripheral library -paketista
+
+startup.S 
+  prosessorin kaynnistyskoodi ja keskeytysvektoritaulukko.
+  Alustaa pinon ja muistialueet ja kutsuu mainia.
+
+core_cm3.c, core_cm3.h
+  prosessorin omat rekisterit ja core peripherals
+  Tarvitaan kun tekee prosessorin alustusta
+
+stm32f10x.h
+  I/o-modulien rekisterit ym. Jokainen tiedosto, joka tekee jotain i/o-ta
+  tarvitsee taman. 
+  
+config.h (itse lisatty)
+  lisatty stm32f10x.h:hon. Omia juttuja, joita ilman ei pysty kaantamaan
+  
+system_stm32f10x.c  system_stm32f10x.h
+  Kello-oskillaattorin alustus
+  
+stdint.h
+  Kopioitu glibc:sta. Core.c ja system.c ei kaanny ilman tata.
